@@ -1,0 +1,8 @@
+.input-field input[type=text]:disabled + label {
+    color: #FFF !important;
+}
+
+.input-color {
+    color: #FFF !important;
+}
+
