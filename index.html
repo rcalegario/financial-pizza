@@ -23,8 +23,9 @@
                     <div class="card-content">
                         <div class="card-title">Valor Recebido</div>
                         <div class="input-field col s12">
-                            <input id="value" type="text" class="validate">
-                            <label class="active" for="value">Valor</label>
+                            <input id="value" type="text" class="validate" required pattern="[0-9]+[,|\.]{0,1}[0-9]{0,2}">
+                            <label class="active" for="value" data-error="">Valor</label>
+                            <span id="error-value" style="color:red"></span>
                         </div>
                         <div class="right-align"> 
                             <a id="calculate" class="btn waves-effect">Calcular</a>
@@ -61,6 +62,17 @@
                 <div class="card blue darken-1">
                     <div class="card-content white-text">
                         <div class="card-title">Gastos</div>
+                        <div class="row" style="margin-bottom: 0px">
+                            <div class="input-field col s6">
+                                <input id="porcent-spend" type="text" class="input-color input-color center-align validate" value='70%' disabled>
+                                <label for="porcent-spend">Porcentagem Total</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="value-spend" type="text" class="input-color input-color center-align validate" placeholder='0,00' disabled>
+                                <label class="active" for="value-spend">Valor Total</label>
+                            </div>
+                        </div>
+                        
                         <div class="row" style="margin-bottom: 0px">
                             <div class="input-field col s6">
                                 <input id="porcent-individual" type="text" class="input-color input-color center-align validate" value='35%' disabled>
