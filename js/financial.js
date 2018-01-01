@@ -1,21 +1,44 @@
-const porcents = [
-    {part: 'invest', porcent: 0.3},
-    {part: 'spend', porcent: 0.7},
-    {part: 'individual', porcent: 0.4},
-    {part: 'couple', porcent: 0.2},
-    {part: 'education', porcent: 0.05},
-    {part: 'want', porcent: 0.05},
+const percents = [
+    {part: 'invest', percent: 0.3},
+    {part: 'individual', percent: 0.4},
+    {part: 'couple', percent: 0.2},
+    {part: 'education', percent: 0.05},
+    {part: 'want', percent: 0.05},
 ];
+
+function calculate(value) {
+    let amount = 0;
+    let spend = 0;
+    percents.forEach(element => {
+        percentage = value * element.percent;
+        if(percentage % 1 != 0){
+            let aux;
+            if(element.part == 'invest'){
+                aux = Math.ceil(percentage);
+            } else {
+                aux = Math.floor(percentage);
+            }
+            amount += percentage - aux;
+            percentage = aux;
+        }
+
+        if(element.part == 'want') {
+            percentage = Math.round(percentage + amount);
+        }
+
+        if(element.part != 'invest') {
+            spend += percentage;
+        }
+
+        $('#value-'+element.part).val(percentage);
+    });
+    $('#value-spend').val(spend);
+}
 
 $('#calculate').click(function() {
     const value = Number($('#value').val().replace(',','.'));
     if($('#value')[0].validity.valid){
-        $('#value-invest').val(value * 0.3);
-        $('#value-spend').val(value * 0.7);
-        $('#value-individual').val(value * 0.4);
-        $('#value-couple').val(value * 0.2);
-        $('#value-education').val(value * 0.05);
-        $('#value-want').val(value * 0.05);
+        calculate(value);
         $('#error-value').hide();
     } else {
         $('#error-value').show();
