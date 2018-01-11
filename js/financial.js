@@ -3,7 +3,7 @@ const percents = [
     {part: 'individual', percent: 0.4},
     {part: 'couple', percent: 0.2},
     {part: 'education', percent: 0.05},
-    {part: 'want', percent: 0.05},
+    {part: 'want', percent: 0.05} // need to be the last
 ];
 
 function calculate(value) {
