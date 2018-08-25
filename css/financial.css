@@ -6,3 +6,35 @@
     color: #FFF !important;
 }
 
+.collection .collection-item.collection-invest-header {
+    background-color: green;
+    border-color:green;
+    color: rgb(241, 241, 241);
+}
+
+.collection-invest-header .title {
+    font-weight: bold;
+    font-size: 115%;
+}
+
+.collection .collection-item.collection-invest {
+    background-color: rgb(163, 221, 125);
+    border-color:green;
+    color: rgb(173, 173, 173);
+    font-weight: bold;
+}
+
+.badge.mode {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.mode-badge.red {
+    background-color: red;
+}
+
+.error-percents {
+    text-align: center;
+}

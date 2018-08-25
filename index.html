@@ -21,7 +21,7 @@
             <div class="col s12 m6 offset-m3">
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-title">Valor Recebido</div>
+                        <div class="card-title">Valor Para Dividir</div>
                         <div class="input-field col s12">
                             <input id="value" type="text" class="validate" required pattern="[0-9]+[,|\.]{0,1}[0-9]{0,2}">
                             <label class="active" for="value" data-error="">Valor</label>
@@ -36,15 +36,19 @@
                 </div>
             </div>
         </div>
-        
+        <div class="row">
+            <div class="col s12 m6 offset-m3 error-percents">
+                <span id="error-percents" style="color:red"></span>
+            </div>
+        </div>
         <div class="row">
             <div class="col s12 m6 offset-m3">
                 <div class="card green darken-3">
                     <div class="card-content white-text">
-                        <div class="card-title">Investir</div>
+                        <div class="card-title">Investimento</div>
                         <div class="row" style="margin-bottom: 0px">
                             <div class="input-field col s6">
-                                <input id="porcent-invest" type="text" class="input-color input-color center-align validate" value='30%' disabled>
+                                <input id="porcent-invest" type="number" class="porcent input-color input-color center-align validate" value='30'>
                                 <label for="porcent-invest">Porcetagem</label>
                             </div>
                             <div class="input-field col s6">
@@ -62,21 +66,11 @@
                 <div class="card blue darken-1">
                     <div class="card-content white-text">
                         <div class="card-title">Gastos</div>
-                        <!-- <div class="row" style="margin-bottom: 0px">
-                            <div class="input-field col s6">
-                                <input id="porcent-spend" type="text" class="input-color input-color center-align validate" value='70%' disabled>
-                                <label for="porcent-spend">Porcentagem Total</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="value-spend" type="text" class="input-color input-color center-align validate" placeholder='0,00' disabled>
-                                <label class="active" for="value-spend">Valor Total</label>
-                            </div>
-                        </div> -->
                         
                         <div class="row" style="margin-bottom: 0px">
                             <div class="input-field col s6">
-                                <input id="porcent-individual" type="text" class="input-color input-color center-align validate" value='40%' disabled>
-                                <label for="porcent-individual">Essencial Individual</label>
+                                <input id="porcent-individual" type="number" class="porcent input-color input-color center-align validate" value='40'>
+                                <label for="porcent-individual">Essencial</label>
                             </div>
                             <div class="input-field col s6">
                                 <input id="value-individual" type="text" class="input-color input-color center-align validate" placeholder='0,00' disabled>
@@ -85,8 +79,8 @@
                         </div>
                         <div class="row" style="margin-bottom: 0px">
                             <div class="input-field col s6">
-                                <input id="porcent-couple" type="text" class="input-color center-align validate" value='20%' disabled>
-                                <label for="porcent-couple">Essencial Casal</label>
+                                <input id="porcent-couple" type="number" class="porcent input-color center-align validate" value='20' >
+                                <label for="porcent-couple">Casal</label>
                             </div>
                             <div class="input-field col s6">
                                 <input id="value-couple" type="text" class="input-color center-align validate" placeholder='0,00' disabled>
@@ -95,7 +89,7 @@
                         </div>
                         <div class="row" style="margin-bottom: 0px">
                             <div class="input-field col s6">
-                                <input id="porcent-education" type="text" class="input-color center-align validate" value='5%' disabled>
+                                <input id="porcent-education" type="number" class="porcent input-color center-align validate" value='5' >
                                 <label for="porcent-education">Educação</label>
                             </div>
                             <div class="input-field col s6">
@@ -105,8 +99,8 @@
                         </div>
                         <div class="row" style="margin-bottom: 0px">
                             <div class="input-field col s6">
-                                <input id="porcent-want" type="text" class="input-color center-align validate" value='5%' disabled>
-                                <label for="porcent-want">Fazer o que quiser</label>
+                                <input id="porcent-want" type="number" class="porcent input-color center-align validate" value='5' >
+                                <label for="porcent-want">Pessoal</label>
                             </div>
                             <div class="input-field col s6">
                                 <input id="value-want" type="text" class="input-color center-align validate" placeholder='0,00' disabled>
